@@ -122,7 +122,7 @@ struct TrieTree {
             }
         }
 
-        if (tmpNode->isWord == true) {
+        if (tmpNode != NULL && tmpNode->isWord == true) {
             return 1;
 
         } else {
