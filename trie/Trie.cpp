@@ -85,7 +85,7 @@ struct TrieTree {
         TrieTree *newNode = new TrieTree;
         newNode->isWord = false;
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 26; i++) {
             newNode->child[i] = NULL;
         }
 
