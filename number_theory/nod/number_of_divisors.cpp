@@ -1,5 +1,5 @@
 /***************************************************
- * Problem Name : prime_factorization.cpp
+ * Problem Name : number_of_divisors.cpp
  * Problem Link : Basic Code
  * Verdict      : Done
  * Date         : 2020-02-27
@@ -78,58 +78,85 @@ using ordered_set  = tree<T, null_type, less<T>, rb_tree_tag,
 
 /************************************ Code Start Here ******************************************************/
 
-// find the prime factor of an integer
+//~ find the number of divisors of an integer
 
-vector<int>prime, factors;
+vector<int>prime;
 char mark[MAX];
+
 void sieve (int n) {
-    int sq = sqrt (n) + 1;
+    int sq = (int) sqrt (n) + 1;
     mark[0] = mark[1] = 1;
 
-    for (int i = 4; i <= n; i += 2) {
+    for (int i = 4; i < n; i += 2) {
         mark[i] = 1;
     }
 
-    for (int i = 3; i <= sq; i+=2) {
-        for (int j = i * i; j <= n; j += (2 * i) ) {
-            mark[j] = 1;
+    for (int i = 0; i <= sq; i+=2) {
+        if (mark[i] == 0) {
+            for (int j = i * i; j < n; j += (2 * i) ) {
+                mark[j] = 1;
+            }
         }
     }
 
-    for (int i = 1; i <= n; i++) {
-        if (!mark[i]) prime.pb (i);
+    for (int i = 1; i < n; i++) {
+        if (mark[i] == 0) prime.pb (i);
     }
 }
-void prime_factorize (int n) {
+
+// sqrt(n) solution
+
+int sqrt_nod (int n) {
+    int cnt = 0;
+    int sq = (int) sqrt (n);
+
+    for (int i = 1; i <= sq; i++) {
+        if (n % i == 0) {
+            if (n / i == i) cnt++;
+            else cnt += 2;
+        }
+    }
+
+    return cnt;
+}
+
+// number of divisor with sieve
+
+int sieve_nod (int n) {
+    int cnt = 1;
     int sq = (int) sqrt (n);
 
     for (int i = 0; i < (int) prime.size() && prime[i] <= sq; i++) {
-        if (mark[n] == 0) break;
+        if (mark[n] == 0) {
+            break;
+        }
 
-        while (! (n % prime[i]) ) {
+        int c = 0;
+
+        while (n % prime[i] == 0) {
+            c++;
             n /= prime[i];
-            factors.pb (prime[i]);
         }
 
         sq = (int) sqrt (n);
+        c++;
+        cnt *= c;
     }
 
     if (n != 1) {
-        factors.pb (n);
+        cnt *= 2;
     }
+
+    return cnt;
 }
+
 
 int main () {
     //~ __FastIO;
-    sieve (MAX - 3);
+    sieve (MAX);
     int n;
     cin >> n;
-    prime_factorize (n);
-
-    for (int i = 0; i < (int) factors.size(); i++) {
-        cout << factors[i] << " ";
-    }
-
-    nl;
+    cout << sqrt_nod (n) << "\n";
+    cout << sieve_nod (n) << "\n";
     return 0;
 }

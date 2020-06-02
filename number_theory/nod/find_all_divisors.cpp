@@ -1,8 +1,8 @@
 /***************************************************
- * Problem Name : prime_factorization.cpp
+ * Problem Name : find_all_divisors.cpp
  * Problem Link : Basic Code
  * Verdict      : Done
- * Date         : 2020-02-27
+ * Date         : 2020-02-28
  * Problem Type : Number Theory
  * Author Name  : Saikat Sharma
  * University   : CSE, MBSTU
@@ -77,57 +77,77 @@ using ordered_set  = tree<T, null_type, less<T>, rb_tree_tag,
       tree_order_statistics_node_update>;
 
 /************************************ Code Start Here ******************************************************/
-
-// find the prime factor of an integer
-
-vector<int>prime, factors;
+vector<int>prime, di;
+vector<pii>fact;
 char mark[MAX];
+
 void sieve (int n) {
-    int sq = sqrt (n) + 1;
     mark[0] = mark[1] = 1;
 
-    for (int i = 4; i <= n; i += 2) {
+    for (int i = 4; i < n; i += 2) {
         mark[i] = 1;
     }
 
-    for (int i = 3; i <= sq; i+=2) {
-        for (int j = i * i; j <= n; j += (2 * i) ) {
-            mark[j] = 1;
-        }
-    }
-
-    for (int i = 1; i <= n; i++) {
-        if (!mark[i]) prime.pb (i);
-    }
-}
-void prime_factorize (int n) {
     int sq = (int) sqrt (n);
 
-    for (int i = 0; i < (int) prime.size() && prime[i] <= sq; i++) {
-        if (mark[n] == 0) break;
+    for (int i = 3; i <= sq; i += 2) {
+        if (mark[i] == 0) {
+            for (int j = i * i; j < n; j += (2 * i) ) {
+                mark[j] = 1;
+            }
+        }
+    }
 
-        while (! (n % prime[i]) ) {
+    for (int i = 2; i < n; i++) {
+        if (mark[i] == 0) prime.pb (i);
+    }
+}
+
+void prime_factorize (int n) {
+    int sq = (int) sqrt (n) + 1;
+
+    for (int i = 0; i < (int) prime.size() && prime[i] <= sq; i++) {
+        int cnt = 0;
+
+        while (n % prime[i] == 0) {
+            cnt++;
             n /= prime[i];
-            factors.pb (prime[i]);
         }
 
+        if (cnt != 0) fact.pb ({prime[i], cnt});
         sq = (int) sqrt (n);
     }
 
     if (n != 1) {
-        factors.pb (n);
+        fact.pb ({n, 1});
     }
 }
 
+void find_div (int n, int i) {
+    for (int j = i; j < (int) fact.size(); j++) {
+        int x = fact[j].first * n;
+
+        for (int k = 0; k < (int) fact[j].second; k++) {
+            di.pb (x);
+            find_div (x, j + 1);
+            x = x * fact[j].first;
+        }
+    }
+}
+
+
 int main () {
     //~ __FastIO;
-    sieve (MAX - 3);
+    sieve (MAX);
     int n;
     cin >> n;
     prime_factorize (n);
+    find_div (1, 0);
+    di.pb (1);
+    sort (all (di) );
 
-    for (int i = 0; i < (int) factors.size(); i++) {
-        cout << factors[i] << " ";
+    for (int v : di) {
+        cout << v << " ";
     }
 
     nl;

@@ -1,7 +1,7 @@
 /***************************************************
- * Problem Name : prime_factorization.cpp
+    * Problem Name : sum_of_divisors.cpp
  * Problem Link : Basic Code
- * Verdict      : Done
+ * Verdict      : Trying
  * Date         : 2020-02-27
  * Problem Type : Number Theory
  * Author Name  : Saikat Sharma
@@ -77,59 +77,66 @@ using ordered_set  = tree<T, null_type, less<T>, rb_tree_tag,
       tree_order_statistics_node_update>;
 
 /************************************ Code Start Here ******************************************************/
+// sum of divisor with sieve
 
-// find the prime factor of an integer
-
-vector<int>prime, factors;
+vector<int>prime;
 char mark[MAX];
+
 void sieve (int n) {
-    int sq = sqrt (n) + 1;
+    int sq = (int) sqrt (n) + 1;
     mark[0] = mark[1] = 1;
 
-    for (int i = 4; i <= n; i += 2) {
+    for (int i = 4; i < n; i += 2) {
         mark[i] = 1;
     }
 
-    for (int i = 3; i <= sq; i+=2) {
-        for (int j = i * i; j <= n; j += (2 * i) ) {
-            mark[j] = 1;
+    for (int i = 0; i <= sq; i+=2) {
+        if (mark[i] == 0) {
+            for (int j = i * i; j < n; j += (2 * i) ) {
+                mark[j] = 1;
+            }
         }
     }
 
-    for (int i = 1; i <= n; i++) {
-        if (!mark[i]) prime.pb (i);
+    for (int i = 1; i < n; i++) {
+        if (mark[i] == 0) prime.pb (i);
     }
 }
-void prime_factorize (int n) {
+
+int sieve_sod (int n) {
+    int sum = 1;
     int sq = (int) sqrt (n);
 
     for (int i = 0; i < (int) prime.size() && prime[i] <= sq; i++) {
-        if (mark[n] == 0) break;
+        if (mark[n] == 0) {
+            break;
+        }
 
-        while (! (n % prime[i]) ) {
+        int c = 1;
+        int res = 1;
+
+        while (n % prime[i] == 0) {
             n /= prime[i];
-            factors.pb (prime[i]);
+            c *= prime[i];
+            res += c;
         }
 
         sq = (int) sqrt (n);
+        sum *= res;
     }
 
     if (n != 1) {
-        factors.pb (n);
+        sum *= (n + 1);
     }
-}
 
+    return sum;
+}
 int main () {
     //~ __FastIO;
-    sieve (MAX - 3);
+    sieve (MAX - 2);
     int n;
     cin >> n;
-    prime_factorize (n);
-
-    for (int i = 0; i < (int) factors.size(); i++) {
-        cout << factors[i] << " ";
-    }
-
-    nl;
+    cout << sieve_sod (n) << "\n";
     return 0;
 }
+
