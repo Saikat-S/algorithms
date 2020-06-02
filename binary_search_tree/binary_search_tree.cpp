@@ -1,9 +1,9 @@
 /***************************************************
  * Problem Name : binary_search_tree.cpp
  * Problem Link : Basic Code
- * Verdict      : Trying
+ * Verdict      : Done
  * Date         : 2020-06-02
- * Problem Type :
+ * Problem Type : Data Stucture - Binary Search Tree
  * Author Name  : Saikat Sharma
  * University   : CSE, MBSTU
  ***************************************************/
