@@ -8,6 +8,7 @@ It is a small repository where you find the implementations of some Algorithms a
     - [Segment Tree with Lazy](https://github.com/Saikat-S/algorithms/blob/master/segment_tee/segment_tree_with_lazy.cpp)
 * [Lowest Common Ancestor](https://github.com/Saikat-S/algorithms/blob/master/lca/lowest%20_common_ancestor.cpp)
 * [Trie Tree](https://github.com/Saikat-S/algorithms/blob/master/trie/Trie.cpp)
+* [Binary Search Tree](https://github.com/Saikat-S/algorithms/blob/master/binary_search_tree/binary_search_tree.cpp)
 
 ### Graph
 * [Breadth First Search](https://github.com/Saikat-S/algorithms/blob/master/bfs/breadth_first_search.cpp)
