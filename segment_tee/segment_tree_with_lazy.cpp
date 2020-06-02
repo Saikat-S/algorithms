@@ -1,7 +1,7 @@
 /***************************************************
  * Problem Name : segment_tree_with_lazy.cpp
- * Problem Link : Basic Code
- * Verdict      : Trying
+ * Problem Link : basic code
+ * Verdict      : done
  * Date         : 2020-06-02
  * Problem Type : Data Structure - Segment Tree
  * Author Name  : Saikat Sharma
