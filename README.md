@@ -1,7 +1,7 @@
 It is a small repository where you find the implementations of some Algorithms and Data Structures that I learned in my competitive programming journey. All of the code is written in c or c++.
 
 ### Data Structure
-* [Sparse Table](https://github.com/Saikat-S/algorithms/blob/master/sparse_table/sparse_table.cpp)
+* [Sparse Table](https://github.com/Saikat-S/algorithms/tree/master/sparse_table)
 * [Binary Index Tree](https://github.com/Saikat-S/algorithms/blob/master/bit/binary_index_tree.cpp)
 * [Segment Tree](https://github.com/Saikat-S/algorithms/tree/master/segment_tee)
     - [Segment Tree without Lazy](https://github.com/Saikat-S/algorithms/blob/master/segment_tee/segment_tree_with_out_lazy.cpp)
