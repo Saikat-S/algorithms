@@ -1,7 +1,7 @@
 /***************************************************
  * Problem Name : sieve_of_eratosthenes.cpp
  * Problem Link : Basic Code
- * Verdict      : Trying
+ * Verdict      : Done
  * Date         : 2020-02-26
  * Problem Type : Number Theory
  * Author Name  : Saikat Sharma

@@ -8,7 +8,7 @@
 * Space - **O(n)**
 
 ### Implementation
-- [Source Code of DSU]()
+- [Source Code of DSU](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/disjoint_set_union/disjoint_set_union.cpp)
 
 ### Practice Problems
 * [SPOJ - CHAIN](https://www.spoj.com/problems/CHAIN/)

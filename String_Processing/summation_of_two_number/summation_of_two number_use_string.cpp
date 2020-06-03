@@ -1,5 +1,5 @@
 /***************************************************
- * Problem Name :summation_of_two number_use string.cpp
+ * Problem Name : summation_of_two number_use string.cpp
  * Problem Link : Basic Code
  * Verdict      : Done
  * Date         : 2020-06-03

@@ -1,5 +1,5 @@
 /***************************************************
-    * Problem Name : sum_of_divisors.cpp
+ * Problem Name : sum_of_divisors.cpp
  * Problem Link : Basic Code
  * Verdict      : Trying
  * Date         : 2020-02-27
