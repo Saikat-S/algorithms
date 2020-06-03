@@ -16,7 +16,7 @@ Sparse Table is a data structure, that allows answering range queries. This data
 * [Codechef - MSTICK](https://www.codechef.com/problems/MSTICK)
 * [Codechef - SEAD](https://www.codechef.com/problems/SEAD)
 
-### Reference
+### References
 * https://cp-algorithms.com/data_structures/sparse-table.html
 * https://www.geeksforgeeks.org/sparse-table/
 * https://www.hackerearth.com/practice/notes/sparse-table/
