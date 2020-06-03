@@ -1,7 +1,7 @@
 /***************************************************
  * Problem Name : String_Hashing.cpp
  * Problem Link : Basic Code
- * Verdict      : Trying
+ * Verdict      : Done
  * Date         : 2019-11-16
  * Problem Type : String (hasing)
  * Author Name  : Saikat Sharma

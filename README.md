@@ -29,7 +29,7 @@ It is a small repository where you find the implementations of some Algorithms a
 ### String
 * [String Hashing](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/hashing/String_Hashing.cpp)
 * [Knuth–Morris–Pratt Algorithm](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/kmp/Knuth%E2%80%93Morris%E2%80%93Pratt_Algorithm.cpp)
-* [Summation of two number use string](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/summation_of_two_number/summation_of_two%20number_use%20string.cpp)
+* [Summation of two number use string](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/summation_of_two_number/summation_of_two%20number_use_string.cpp)
 
 ### Dynamic Programming
 * [Digit DP](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/digit_dp/digit_dp.cpp)
