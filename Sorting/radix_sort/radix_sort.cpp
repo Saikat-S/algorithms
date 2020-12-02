@@ -1,7 +1,7 @@
 /***************************************************
  * Problem Name : radix_sort.cpp
  * Problem Link : Basic Code
- * Verdict      : Trying
+ * Verdict      : Done
  * Date         : 2020-12-02
  * Problem Type : sorting
  * Author Name  : Saikat Sharma
@@ -82,8 +82,8 @@ using ordered_set  = tree<T, null_type, less<T>, rb_tree_tag,
 
 int const range = 10;
 
-void count_sort (int *ar, int n, int place, int f) {
-    int freq[10] = {0};
+void count_sort (int *ar, int n, int place) {
+    int freq[range] = {0};
     int output[n + 3];
 
     for (int i = 0; i < n; i++) {
@@ -99,25 +99,18 @@ void count_sort (int *ar, int n, int place, int f) {
         freq[ (ar[i] / place) % range]--;
     }
 
-    if (f) {
-        for (int i = 0; i < n; i++) {
-            cout << ar[i] << " ";
-            ar[i] = output[i];
-        }
-
-        nl;
+    for (int i = 0; i < n; i++) {
+        ar[i] = output[i];
     }
 }
 
 void radix_sort (int *ar, int n, int max_element) {
     int mul = 1;
-    int f = 0;
 
     while (max_element) {
-        count_sort (ar, n, mul, f);
+        count_sort (ar, n, mul);
         mul *= 10;
         max_element /= 10;
-        f++;
     }
 }
 
@@ -140,7 +133,7 @@ int main () {
         cout << ar[i] << " ";
     }
 
-    //~ nl;
+    nl;
     return 0;
 }
 
