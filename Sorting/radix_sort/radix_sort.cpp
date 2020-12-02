@@ -1,9 +1,9 @@
 /***************************************************
- * Problem Name : Persistent_Segment_Tree(static).cpp
+ * Problem Name : radix_sort.cpp
  * Problem Link : Basic Code
- * Verdict      : Done
- * Date         : 2020-07-28
- * Problem Type : Data Structure
+ * Verdict      : Trying
+ * Date         : 2020-12-02
+ * Problem Type : sorting
  * Author Name  : Saikat Sharma
  * University   : CSE, MBSTU
  ***************************************************/
@@ -79,96 +79,69 @@ using ordered_set  = tree<T, null_type, less<T>, rb_tree_tag,
       tree_order_statistics_node_update>;
 
 /************************************ Code Start Here ******************************************************/
-struct Node {
-    int left, right, data;
-} tr[MAX * 20];
 
-int root[MAX], ar[MAX], id;
+int const range = 10;
 
-void build (int nod, int low, int high) {
-    if (low == high) {
-        tr[nod].data = ar[low];
-        return;
+void count_sort (int *ar, int n, int place, int f) {
+    int freq[10] = {0};
+    int output[n + 3];
+
+    for (int i = 0; i < n; i++) {
+        freq[ (ar[i] / place) % range]++;
     }
 
-    int mid = (high + low) / 2;
-    tr[nod].left = ++id, tr[nod].right = ++id;
-    build (tr[nod].left, low, mid);
-    build (tr[nod].right, mid + 1, high);
-    tr[nod].data = tr[tr[nod].left].data + tr[tr[nod].right].data;
+    for (int i = 1; i < range; i++) {
+        freq[i] += freq[i - 1];
+    }
+
+    for (int i = n - 1; i >= 0; i--) {
+        output[freq[ (ar[i] / place) % range] - 1] = ar[i];
+        freq[ (ar[i] / place) % range]--;
+    }
+
+    if (f) {
+        for (int i = 0; i < n; i++) {
+            cout << ar[i] << " ";
+            ar[i] = output[i];
+        }
+
+        nl;
+    }
 }
 
-int update (int nod, int low, int high, int pos, int val) {
-    if (low > pos || high < pos) {
-        return nod;
+void radix_sort (int *ar, int n, int max_element) {
+    int mul = 1;
+    int f = 0;
+
+    while (max_element) {
+        count_sort (ar, n, mul, f);
+        mul *= 10;
+        max_element /= 10;
+        f++;
     }
-
-    if (low == high) {
-        tr[++id] = tr[nod];
-        tr[id].data += val;
-        return id;
-    }
-
-    int mid = (high + low) / 2;
-    tr[++id] = tr[nod], nod = id;
-    tr[nod].left = update (tr[nod].left, low, mid, pos, val);
-    tr[nod].right = update (tr[nod].right, mid + 1, high, pos, val);
-    tr[nod].data = tr[tr[nod].left].data + tr[tr[nod].right].data;
-    return nod;
-}
-
-int query (int nod, int low, int high, int qlow, int qhigh) {
-    if (qlow > high || qhigh < low) {
-        return 0;
-    }
-
-    if (low >= qlow && high <= qhigh) {
-        return tr[nod].data;
-    }
-
-    int mid = (high + low) / 2;
-    int a = query (tr[nod].left, low, mid, qlow, qhigh);
-    int b = query (tr[nod].right, mid + 1, high, qlow, qhigh);
-    return (a + b);
 }
 
 int main () {
-    __FastIO;
+    //~ __FastIO;
     int n;
+    int ar[MAX];
     cin >> n;
+    int max_element = 0;
 
     for (int i = 0; i < n; i++) {
         cin >> ar[i];
+        max_element = max (max_element, ar[i]);
     }
 
-    id = 1;
-    root[0] = id;
-    build (root[0], 0, n - 1);
-    int q;
-    cin >> q;
-    int h = 1;
+    radix_sort (ar, n, max_element);
 
-    while (q--) {
-        int c;
-        cin >> c;
-
-        if (c == 1) {
-            int id, pos, val;
-            cin >> id >> pos >> val;
-            pos--;
-            root[h++] = update (root[id], 0, n - 1, pos, val);
-
-        } else {
-            int id, l, r;
-            cin >> id >> l >> r;
-            l--, r--;
-            int res = query (root[id], 0, n - 1, l, r);
-            cout << res << "\n";
-        }
+    // sorted array
+    for (int i = 0; i < n; i++) {
+        cout << ar[i] << " ";
     }
 
+    //~ nl;
     return 0;
 }
-// This code is the solution of
-//~ https://www.spoj.com/problems/PSEGTREE/
-//~ problem
+
+

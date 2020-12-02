@@ -1,9 +1,9 @@
 /***************************************************
- * Problem Name : Persistent_Segment_Tree(static).cpp
+ * Problem Name : quick_sort.cpp
  * Problem Link : Basic Code
- * Verdict      : Done
- * Date         : 2020-07-28
- * Problem Type : Data Structure
+ * Verdict      : done
+ * Date         : 2020-12-02
+ * Problem Type : sorting
  * Author Name  : Saikat Sharma
  * University   : CSE, MBSTU
  ***************************************************/
@@ -79,96 +79,54 @@ using ordered_set  = tree<T, null_type, less<T>, rb_tree_tag,
       tree_order_statistics_node_update>;
 
 /************************************ Code Start Here ******************************************************/
-struct Node {
-    int left, right, data;
-} tr[MAX * 20];
 
-int root[MAX], ar[MAX], id;
+int partition (int *ar, int start, int end) {
+    int i = start + 1;
+    int piv = ar[start];
 
-void build (int nod, int low, int high) {
-    if (low == high) {
-        tr[nod].data = ar[low];
-        return;
+    for (int j = start + 1; j <= end; j++) {
+        if (ar[j] < piv) {
+            swap (ar[i], ar[j]);
+            i++;
+        }
     }
 
-    int mid = (high + low) / 2;
-    tr[nod].left = ++id, tr[nod].right = ++id;
-    build (tr[nod].left, low, mid);
-    build (tr[nod].right, mid + 1, high);
-    tr[nod].data = tr[tr[nod].left].data + tr[tr[nod].right].data;
+    swap (ar[start], ar[i - 1]);
+    return i - 1;
 }
 
-int update (int nod, int low, int high, int pos, int val) {
-    if (low > pos || high < pos) {
-        return nod;
-    }
-
-    if (low == high) {
-        tr[++id] = tr[nod];
-        tr[id].data += val;
-        return id;
-    }
-
-    int mid = (high + low) / 2;
-    tr[++id] = tr[nod], nod = id;
-    tr[nod].left = update (tr[nod].left, low, mid, pos, val);
-    tr[nod].right = update (tr[nod].right, mid + 1, high, pos, val);
-    tr[nod].data = tr[tr[nod].left].data + tr[tr[nod].right].data;
-    return nod;
+int rand_partition ( int *ar, int start, int end ) {
+    int random = start + rand( ) % (end - start + 1 ) ;
+    swap ( ar[random], ar[start]) ;
+    return partition (ar, start, end) ;
 }
 
-int query (int nod, int low, int high, int qlow, int qhigh) {
-    if (qlow > high || qhigh < low) {
-        return 0;
+void quick_sort (int *ar, int start, int end) {
+    if (start < end) {
+        int piv_pos = rand_partition (ar, start, end);
+        //~ int piv_pos =  partition (ar, start, end);
+        quick_sort (ar, start, piv_pos - 1);
+        quick_sort (ar, piv_pos + 1, end);
     }
-
-    if (low >= qlow && high <= qhigh) {
-        return tr[nod].data;
-    }
-
-    int mid = (high + low) / 2;
-    int a = query (tr[nod].left, low, mid, qlow, qhigh);
-    int b = query (tr[nod].right, mid + 1, high, qlow, qhigh);
-    return (a + b);
 }
-
 int main () {
-    __FastIO;
-    int n;
+    //~ __FastIO;
+    int n, ar[MAX];
     cin >> n;
 
     for (int i = 0; i < n; i++) {
         cin >> ar[i];
     }
 
-    id = 1;
-    root[0] = id;
-    build (root[0], 0, n - 1);
-    int q;
-    cin >> q;
-    int h = 1;
+    quick_sort (ar, 0, n - 1);
 
-    while (q--) {
-        int c;
-        cin >> c;
+    // sorted array
 
-        if (c == 1) {
-            int id, pos, val;
-            cin >> id >> pos >> val;
-            pos--;
-            root[h++] = update (root[id], 0, n - 1, pos, val);
-
-        } else {
-            int id, l, r;
-            cin >> id >> l >> r;
-            l--, r--;
-            int res = query (root[id], 0, n - 1, l, r);
-            cout << res << "\n";
-        }
+    for (int i = 0; i < n; i++) {
+        cout <<  ar[i] << " ";
     }
 
+    nl;
     return 0;
 }
-// This code is the solution of
-//~ https://www.spoj.com/problems/PSEGTREE/
-//~ problem
+
