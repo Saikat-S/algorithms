@@ -8,6 +8,9 @@ It is a small repository where you find the implementations of some Algorithms a
 * [Segment Tree](https://github.com/Saikat-S/algorithms/tree/master/Data_Structures/segment_tee)
     - [Segment Tree without Lazy](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/segment_tee/segment_tree_with_out_lazy.cpp)
     - [Segment Tree with Lazy](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/segment_tee/segment_tree_with_lazy.cpp)
+* [Persistent Segment Tree](https://github.com/Saikat-S/algorithms/tree/master/Data_Structures/persistent_segment_tree)
+    - [Persistent Segment Tree (Linked List)]https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/persistent_segment_tree/Persistent_Segment_Tree(linked_list).cpp)
+    - [Persistent Segment Tree (Static Array)](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/persistent_segment_tree/Persistent_Segment_Tree(static).cpp)
 * [Lowest Common Ancestor](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/lca/lowest%20_common_ancestor.cpp)
 * [Trie Tree](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/trie/Trie.cpp)
 * [Binary Search Tree](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/binary_search_tree/binary_search_tree.cpp)
@@ -46,6 +49,16 @@ It is a small repository where you find the implementations of some Algorithms a
     - [Find all divisors](https://github.com/Saikat-S/algorithms/blob/master/Number_Theory/nod/find_all_divisors.cpp)
 * [Sum of Divisors](https://github.com/Saikat-S/algorithms/blob/master/Number_Theory/sod/sum_of_divisors.cpp)
 * [Prime Factorization](https://github.com/Saikat-S/algorithms/blob/master/Number_Theory/prime_factorization/prime_factorization.cpp)
+
+### Sorting
+* [Bubble Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/bubble_sort/bubble_sort.cpp)
+* [Counting Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/counting_sort/counting_sort.cpp)
+* [Selection Sort]()
+* [Insertion Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/insertion_sort/insertion_sort.cpp)
+* [Merge Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/merge_sort/merge_sort.cpp)
+* [Quick Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/quick_sort/quick_sort.cpp)
+* [Heap Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/heap_sort/heap_sort.cpp)
+* [Radix Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/radix_sort/radix_sort.cpp)
 
 ### Miscellaneous 
 * [Magic Square](https://github.com/Saikat-S/algorithms/tree/master/Miscellaneous/magic_square)
