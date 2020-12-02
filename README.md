@@ -9,7 +9,7 @@ It is a small repository where you find the implementations of some Algorithms a
     - [Segment Tree without Lazy](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/segment_tee/segment_tree_with_out_lazy.cpp)
     - [Segment Tree with Lazy](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/segment_tee/segment_tree_with_lazy.cpp)
 * [Persistent Segment Tree](https://github.com/Saikat-S/algorithms/tree/master/Data_Structures/persistent_segment_tree)
-    - [Persistent Segment Tree (Linked List)]https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/persistent_segment_tree/Persistent_Segment_Tree(linked_list).cpp)
+    - [Persistent Segment Tree (Linked List)](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/persistent_segment_tree/Persistent_Segment_Tree(linked_list).cpp)
     - [Persistent Segment Tree (Static Array)](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/persistent_segment_tree/Persistent_Segment_Tree(static).cpp)
 * [Lowest Common Ancestor](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/lca/lowest%20_common_ancestor.cpp)
 * [Trie Tree](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/trie/Trie.cpp)
@@ -53,7 +53,7 @@ It is a small repository where you find the implementations of some Algorithms a
 ### Sorting
 * [Bubble Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/bubble_sort/bubble_sort.cpp)
 * [Counting Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/counting_sort/counting_sort.cpp)
-* [Selection Sort]()
+* [Selection Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/selection_sort/selection_sort.cpp)
 * [Insertion Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/insertion_sort/insertion_sort.cpp)
 * [Merge Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/merge_sort/merge_sort.cpp)
 * [Quick Sort](https://github.com/Saikat-S/algorithms/blob/master/Sorting/quick_sort/quick_sort.cpp)
