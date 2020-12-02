@@ -135,3 +135,6 @@ int main() {
 8
 2 5 3 6 8 7 9 4
 */
+
+//~ resources:
+//~ https://www.hackerearth.com/practice/algorithms/sorting/heap-sort/tutorial/

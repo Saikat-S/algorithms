@@ -130,3 +130,5 @@ int main () {
     return 0;
 }
 
+//~ resources:
+//~ https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/
