@@ -27,7 +27,7 @@ It is a small repository where you find the implementations of some Algorithms a
 * [Dijkstra](https://github.com/Saikat-S/algorithms/blob/master/Graphs/dijkstra/dijkstra.cpp)
 * [Minimum Spanning Tree](https://github.com/Saikat-S/algorithms/tree/master/Graphs/minimum_spanning_tree)
     - [Minimum Spanning Tree basic](https://github.com/Saikat-S/algorithms/blob/master/Graphs/minimum_spanning_tree/minimum_spanning%20_tree_basic/Minimum_Spanning%20_Tree.cpp)
-    - [MST second minimum](https://github.com/Saikat-S/algorithms/blob/master/Graphs/minimum_spanning_tree/MST_second_minimum/MST_Second_Minimum.cpp)
+    - [MST Second Minimum](https://github.com/Saikat-S/algorithms/blob/master/Graphs/minimum_spanning_tree/MST_second_minimum/MST_Second_Minimum.cpp)
 
 ### String
 * [String Hashing](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/hashing/String_Hashing.cpp)
