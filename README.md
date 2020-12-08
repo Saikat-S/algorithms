@@ -32,6 +32,10 @@ It is a small repository where you find the implementations of some Algorithms a
 ### String
 * [String Hashing](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/hashing/String_Hashing.cpp)
 * [Knuth–Morris–Pratt Algorithm](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/kmp/Knuth%E2%80%93Morris%E2%80%93Pratt_Algorithm.cpp)
+* [Z Function Algorithm](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/z-function/z-function.cpp)
+* [Rabin Karp Algorithm](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/rabin_karp/rabin_karp.cpp)
+* [Manacher's Algorithm](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/manacher's-algorithm/manacher's_algorithm.cpp)
+* [Suffix Array](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/suffix_array/suffix_array.cpp)
 * [Summation of two number use string](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/summation_of_two_number/summation_of_two%20number_use_string.cpp)
 
 ### Dynamic Programming
