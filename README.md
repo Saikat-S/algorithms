@@ -39,6 +39,13 @@ It is a small repository where you find the implementations of some Algorithms a
 * [Summation of two number use string](https://github.com/Saikat-S/algorithms/blob/master/String_Processing/summation_of_two_number/summation_of_two%20number_use_string.cpp)
 
 ### Dynamic Programming
+* [Coin Change](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/coin_change/coin_change.cpp)
+* [0/1 Knapsack](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/0-1knapsack/0-1knapsack.cpp)
+* [Longest Common Subsequence](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/lcs/longest_common_subsequence.cpp)
+* [Longest Increasing Subsequence(n^2)](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/lis/longest_increasing_subsequence(n%5E2).cpp)
+* [Longest Increasing Subsequence(nlogn)](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/lis/longest_increasing_subsequence(nlogn).cpp)
+* [Bit Mask DP](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/bit_mask_dp/bit_mask_dp.cpp)
+* [Minimum Vertex Cover](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/tree-dp/minimum-vertex-cover.cpp)
 * [Digit DP](https://github.com/Saikat-S/algorithms/blob/master/Dynamic_Programming/digit_dp/digit_dp.cpp)
 
 ### Mathematics
