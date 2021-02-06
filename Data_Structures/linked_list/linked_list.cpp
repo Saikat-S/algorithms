@@ -275,7 +275,6 @@ class listEDLIST {
                 cur1->next = cur;
             }
         }
-
 };
 
 

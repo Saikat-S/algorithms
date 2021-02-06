@@ -14,6 +14,7 @@ It is a small repository where you find the implementations of some Algorithms a
 * [Lowest Common Ancestor](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/lca/lowest%20_common_ancestor.cpp)
 * [Trie Tree](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/trie/Trie.cpp)
 * [Binary Search Tree](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/binary_search_tree/binary_search_tree.cpp)
+* [Linked List](https://github.com/Saikat-S/algorithms/blob/master/Data_Structures/linked_list/linked_list.cpp)
 
 ### Graph
 * [Breadth First Search](https://github.com/Saikat-S/algorithms/blob/master/Graphs/bfs/breadth_first_search.cpp)
